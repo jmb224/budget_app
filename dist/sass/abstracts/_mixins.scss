@@ -1,0 +1,36 @@
+@mixin boxShadow {
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .2);
+}
+
+@mixin svgIconSize {
+    width: 2rem;
+    height: 2rem;
+}
+
+@mixin justifyAlignItem {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin inheritFontSizeAndFamily {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+@mixin textOrNumberInputStyle {
+    @include inheritFontSizeAndFamily;
+    padding: 1.25rem 1rem;
+    border-radius: 5px;
+
+    &:focus {
+        border: 1px solid var(--secondary_color);
+    }
+}
+
+@mixin borderColor ($type) {
+    @if ($type == exp) {
+        border: 1px solid var(--primary_light);
+    } @else {
+        border: 1px solid var(--secondary_light);;
+    }
+}

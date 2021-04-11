@@ -1,0 +1,80 @@
+.header {
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.logo {
+    height: 4rem;
+    margin-left: 2rem;
+}
+
+.search {
+    flex: 0 0 50%;
+    @include justifyAlignItem;
+    letter-spacing: 1px;
+
+    display: flex;
+    
+    &__input {
+        width: 85%;
+
+        &:focus {
+            outline: none;
+            border: 1px solid var(--primary_light);
+            width: 100%;
+        }
+    }
+    
+    &__icon {
+        @include svgIconSize;
+        fill: var(--dark_grey_3);
+    }
+
+    &__button {
+        border: none;
+        background-color: var(--light_grey_2);
+        transition: all .3s;
+    }
+}
+
+.user-nav {
+    display: flex;
+    align-self: stretch;
+
+    &__user {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+
+        &-photo {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
+
+        &-name {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-left: .5rem;
+        }
+    }
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sorting {
+    display: flex;
+
+    &__icon {
+        cursor: pointer;
+        @include svgIconSize;
+        fill: var(--dark_grey_2);
+    }
+}

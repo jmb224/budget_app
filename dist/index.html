@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>Budget APP</title>
+</head>
+<body>
+    <div class="container">
+        
+        <header class="header">
+            <img src="img/logo.png" alt="" class="logo">
+            <h1 class="heading-primary">
+                <span class="heading-primary__main">Financial Budgeting</span>
+                <span class="heading-primary__sub">For a better management</span>
+            </h1>
+            <form action="" class="search">
+                <input type="text" class="search__input text-input" placeholder="search for expenses item">
+                <button class="search__button">
+                    <svg class="search__icon">
+                        <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+                    </svg>
+                </button>
+            </form>
+
+            <nav class="user-nav">
+                <div class="user-nav__user">
+                    <img src="img/jmblogo.png" alt="" class="user-nav__user-photo">
+                    <span class="user-nav__user-name">Jmb</span>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <nav class="sidebar">
+                <ul class="side-nav">
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link side-nav__active">
+                            <svg class="side-nav__icon">
+                                <use xlink:href="img/sprite.svg#icon-chart-bar"></use>
+                            </svg>
+                            <span class="side-nav__span">Reports</span>
+                        </a>
+                    </li>
+                    
+                    <!-- <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                            </svg>
+                            <span class="side-nav__span">Average Expense</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                            </svg>
+                            <span class="side-nav__span">Average Expense Weekly</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                            </svg>
+                            <span class="side-nav__span">Average Expense Daily</span>
+                        </a>
+                    </li> -->
+                </ul>
+
+                <div class="totals">
+                    <div class="totals__description totals__description--inc">
+                        <h2 class="heading-secondary heading-secondary--inc totals__header">Total Expenses</h2>
+                        <p class="totals__value totals__value--exp" id="totals__exp">$345.45</p>
+                    </div>
+
+                    <div class="totals__description totals__description--exp">
+                        <h2 class="heading-secondary heading-secondary--exp totals__header">Total Expenses</h2>
+                        <p class="totals__value totals__value--inc" id="totals__exp">$345.45</p>
+                    </div>
+                </div>
+                <div class="copyright">&copy; 2018 by Julio Quina. All right reserved</div>
+            </nav>
+            <main class="budget">
+                <div class="budget__display">
+                    <div class="budget__available">
+                        <h3 class="budget__available--text">
+                            Available budget in 
+                            <span class="budget__available--month">June, 2018</span>
+                        </h3>
+                        <h2 class="budget__value">0.00</h2>
+                    </div>
+                        
+                    <div class="budget__box inc-bg-color">
+                        <p class="budget__box--left">Income</p>
+                        <p class="budget__box--right budget__box--value">0.00</p>
+                    </div>
+    
+                    <div class="budget__box exp-bg-color">
+                        <p class="budget__box--left">expense</p>
+                        <div class="budget__box--right">
+                            <p class="budget__box--value">0.00</p>
+                            <p class="budget__box--percentage">100%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input">
+                    <div class="input__choice">
+                        <div class="input__choice--inc">
+                            <input type="radio" name="choice" id="input__income" class="input__radio" checked>
+                            <label for="input__income" class="input__radio-label input__radio-label--for-inc">
+                                <span class="input__radio-button"></span>inc</label>
+                        </div>
+                        <div class="input__choice--exp">
+                            <input type="radio" name="choice" id="input__expense" class="input__radio">
+                            <label for="input__expense" class="input__radio-label input__radio-label--for-exp">
+                                <span class="input__radio-button"></span>exp</label>
+                        </div>
+                    </div>
+
+                    <div class="input__description">
+                        <input type="text" class="input__text" placeholder="Add description">
+                    </div>
+
+                    <div class="input__value">
+                        <input type="number" min="0.0" step="0.1" name="" id="" class="input__value--number" placeholder="Value">
+                    </div>
+                    <button class="btn btn__add">
+                        <svg class="btn__icon">
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="incomeAndExpenseList">
+                    <div class="description-income" id="description-income">
+                        <div class="heading">
+                            <h2 class="heading-secondary heading-secondary--inc">Income</h2>
+                            <div class="sorting">
+                                <button class="btn">
+                                    <div class="tooltip">
+                                        <svg class="sorting__icon">
+                                            <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
+                                        </svg>
+                                        <span class="tooltip__text">sort 123</span>
+                                    </div>
+                                </button>
+                                <button class="btn">
+                                    <div class="tooltip">
+                                        <svg class="sorting__icon">
+                                            <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                                        </svg>
+                                        <span class="tooltip__text">sort ABC</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <ul class="description-income__list">
+                            <!-- <li class="description-item description-item--inc" id="inc-01">
+                                <button class="btn btn__edit-item">
+                                    <svg class="description-item__edit-btn">
+                                        <use xlink:href="img/sprite.svg#icon-edit"></use>
+                                    </svg>
+                                </button>
+                                <span class="description-item__name">Salary</span>
+                                <div class="description-item__price description-item__price--inc">
+                                    <span class="description-item__value">$580.00</span>
+                                    <button class="btn btn__delete-item--inc">
+                                        <svg class="description-item__delete-btn">
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </li> -->
+                            <!-- <li class="description-item description-item--inc" id="inc-01">
+                                <button class="btn btn__edit-item">
+                                    <svg class="description-item__edit-btn">
+                                        <use xlink:href="img/sprite.svg#icon-edit"></use>
+                                    </svg>
+                                </button>
+                                <span class="description-item__name">Salary</span>
+                                <div class="description-item__price description-item__price--inc">
+                                    <span class="description-item__value">$580.00</span>
+                                    <button class="btn btn__delete-item--inc">
+                                        <svg class="description-item__delete-btn">
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                    <div class="description-expense" id="description-expense">
+                        <div class="heading">
+                            <h2 class="heading-secondary heading-secondary--exp">Expenses</h2> 
+                            <div class="sorting">
+                                <button class="btn">
+                                    <div class="tooltip">
+                                        <svg class="sorting__icon">
+                                            <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
+                                        </svg>
+                                        <span class="tooltip__text">sort 123</span>
+                                    </div>
+                                </button>
+                                <button class="btn">
+                                    <div class="tooltip">
+                                        <svg class="sorting__icon">
+                                            <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                                        </svg>
+                                        <span class="tooltip__text">sort ABC</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <ul class="description-expense__list">
+                            <!-- <li class="description-item description-item--exp" id="exp-01">
+                                <button class="btn btn__edit-item">
+                                    <svg class="description-item__edit-btn">
+                                        <use xlink:href="img/sprite.svg#icon-edit"></use>
+                                    </svg>
+                                </button>
+                                <span class="description-item__name">Salary</span>
+                                <div class="description-item__price description-item__price--exp">
+                                    <span class="description-item__value">$580.00</span>
+                                    <span class="description-item__percentage">25.55%</span>
+                                    <button class="btn btn__delete-item">
+                                        <svg class="description-item__delete-btn">
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </li> -->
+                            <!-- <li class="description-item description-item--exp" id="exp-01">
+                                <button class="btn btn__edit-item">
+                                    <svg class="description-item__edit-btn">
+                                        <use xlink:href="img/sprite.svg#icon-edit"></use>
+                                    </svg>
+                                </button>
+                                <span class="description-item__name">Salary</span>
+                                <div class="description-item__price description-item__price--exp">
+                                    <span class="description-item__value">$580.00</span>
+                                    <span class="description-item__percentage">0.23%</span>
+                                    <button class="btn btn__delete-item">
+                                        <svg class="description-item__delete-btn">
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+</html>

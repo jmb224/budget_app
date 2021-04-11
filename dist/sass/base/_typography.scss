@@ -1,0 +1,37 @@
+.heading-primary {
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    
+    span {
+        display: block;
+    }
+
+    &__main, &__sub {
+        font-weight: 500;
+    }
+
+    &__sub {
+        letter-spacing: 3.5px;
+        font-size: 1.4rem;
+    }
+}
+
+.heading-secondary {
+    display: inline-block;
+    color: transparent;
+    -webkit-background-clip: text;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding-bottom: 1rem;
+    
+    &--exp {
+        background-image: linear-gradient(to right, var(--primary_lighter), var(--primary_color));
+    }
+
+    &--inc {
+        background-image: linear-gradient(to right, var(--secondary_light), var(--secondary_color));
+    }
+}

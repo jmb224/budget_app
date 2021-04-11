@@ -1,0 +1,111 @@
+input {
+    border: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+    &[type=number]::-webkit-inner-spin-button {
+        opacity: 1;
+    }
+
+    &[type=text], &[type=number] {
+        color: var(--dark_grey_2);
+    }
+
+    &::-webkit-input-placeholder {
+        font-weight: 100;
+        color: var(--light_grey_4);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.input {
+    height: 6.5rem;
+    background-color: var(--light_grey_2);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    font-size: 1.35rem;
+    text-transform: uppercase;
+
+    display: flex;
+    @include justifyAlignItem;
+
+    &__choice {
+        display: flex;
+        flex-direction: column;
+
+        &--inc {
+            padding-bottom: .2rem;
+        }
+    }
+
+    &__radio {
+        display: none;
+
+        &-label {
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.2rem;
+        }
+
+        &-button {
+            display: inline-block;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            position: absolute;
+            top: 1px;
+            left: -2.5rem;
+            padding: .7rem;
+
+            &::after {
+                position: absolute;
+                display: block;
+                content: '';
+                width: 0.875rem;
+                height: 0.875rem;
+                border-radius: 50%;
+                background-color: currentColor;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: all .3s;
+            }
+        }
+    }
+    
+    &__radio:checked + &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+    &__description {
+        margin: 0 1rem;
+    }
+
+    &__text {
+        width: 40rem;
+        @include textOrNumberInputStyle;
+    }
+
+    &__value {
+        margin-right: 1rem;
+        
+        &--number {
+            width: 7rem;
+            @include textOrNumberInputStyle;
+        }
+    }
+}
+
+#input {
+    &__expense:checked + .input__radio-label {
+        color: var(--primary_color);
+    }
+
+    &__income:checked + .input__radio-label {
+        color: var(--secondary_color);
+    }
+}

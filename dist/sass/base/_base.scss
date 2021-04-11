@@ -1,0 +1,95 @@
+:root {
+    // darkcyan
+
+    --primary_color: #eb2f64;
+    --primary_light: #FF3366;
+    --primary_highlight: #ff33661a;
+    --primary_highlight-darker: #ff336636;
+    // --primary_lighter: #ff8fab;
+    --primary_lighter: #f57998;
+    --primary_dark :  #BA265D;
+
+    --secondary_color: #28b483;
+    // --secondary_light: #40d29f;
+    --secondary_light: #9ae67b;
+    --secondary_highlight: #83d6d636;
+
+    --light_grey_1 : #faf9f9; 
+    --light_grey_2 : #f4f2f2; 
+    --light_grey_3 : #f0eeee;
+    --light_grey_4 : #ccc;
+
+    --dark_grey_1  : #333;
+    --dark_grey_2  : #777;
+    --dark_grey_3  : #999;
+    --dark_shadow  : 0 2rem 6rem rgba(0, 0, 0, .3);
+}
+
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    background-color: var(--dark_grey_1);
+    color: var(--dark_grey_2);
+}
+
+.container {
+    max-width: 120rem;
+    margin: 1.5rem auto;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    @include boxShadow;
+}
+
+.incomeAndExpenseList {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 20rem;
+    padding: 4rem 2rem 2rem 2rem;
+    letter-spacing: .025rem;
+
+    ul {
+        list-style: none;
+        overflow: auto;
+        height: 25.5rem;
+    }
+}
+
+.exp-highlight-boder {
+    @include borderColor (exp);
+}
+
+.inc-highlight-border {
+    @include borderColor (inc);
+}
+
+.red-border {
+    color: var(--primary_color);
+}
+
+.green-border {
+    color: var(--secondary_color);
+}
+
+.red {
+    color: #FF5049 !important;
+    border: 1px solid #FF5049;
+ }
+ .red-focus:focus { border: 1px solid #FF5049 !important}

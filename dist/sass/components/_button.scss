@@ -1,0 +1,31 @@
+.btn {
+    background-color: transparent;
+    // color: inherit;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    display: flex;
+    
+    &__add {
+        // color: var(--dark_grey_2);
+        color: var(--secondary_color);
+        border: 2px solid currentColor;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        transition: all .4s;
+
+        &--red-border {
+            color: var(--primary_color);
+        }
+    }
+    
+    &__icon {
+        @include svgIconSize;
+        fill: currentColor;
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
